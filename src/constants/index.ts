@@ -78,3 +78,24 @@ type ProgressDataItem = {
      percentage: '16%',
   },
  ];
+
+ // Define a type for each AboutCard data item
+type AboutCardDataItem = {
+  bg: string;
+  title: string;
+  img: string;
+ };
+ 
+ // Define the constants
+ export const aboutCardData: AboutCardDataItem[] = [
+  {
+     bg: 'from-cyan-500 to-blue-500',
+     title: 'Calculate your Profits',
+     img: '/about-img-1.jpg',
+  },
+  {
+     bg: 'from-red-400 to-red-500',
+     title: 'Calculate your tax liability',
+     img: '/about-img-2.jpg',
+  },
+ ];

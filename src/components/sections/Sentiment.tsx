@@ -24,7 +24,7 @@ type Props = {}
 const SentimentCard = ({ icon, bg }: CardProps) => {
   return (
     <>
-      <div className='flex items-start justify-start gap-8'>
+      <div className='flex items-center justify-start gap-8 flex-col lg:flex-row lg:items-start'>
         <div className={`rounded-full ${bg}`}>
           {icon}
         </div>
@@ -46,7 +46,7 @@ const SentimentCard = ({ icon, bg }: CardProps) => {
 const Sentiment = (props: Props) => {
   return (
     <>
-      <section className='max-container flex flex-col items-start justify-start md:gap-12 lg:py-14'>
+      <section className='max-container min-h-screen flex flex-col items-start justify-start md:gap-12 lg:py-14'>
         <div className='flex flex-col gap-5 items-center justify-start'>
           <h1 className='sectionTitle'>
             Sentiment
@@ -56,7 +56,7 @@ const Sentiment = (props: Props) => {
           </h3>
         </div>
 
-        <Carousel className="w-full">
+        <Carousel className="w-full my-5">
           <CarouselContent className="-ml-1">
             {SENTIMENT_ITEMS.map((item, index) => (
               <CarouselItem key={index} className="pl-1 md:basis-1/2 lg:basis-2/3">
@@ -70,28 +70,28 @@ const Sentiment = (props: Props) => {
           <CarouselNext className="mr-16 drop-shadow-2xl" />
         </Carousel>
 
-        <div>
+        <div className='mb-5 sm:mb-0'>
           <h3 className='flex items-center justify-start gap-2 text-md font-semibold text-gray-600'>
             Analyst Estimates <Info className='bg-gray-600 rounded-2xl text-white ' />
           </h3>
         </div>
 
-        <div className='flex justify-start items-start gap-24'>
-          <div className='flex justify-center items-center p-5 m-5'>
-            <h2 className='text-green-500 text-5xl font-semibold'>
+        <div className='flex justify-center items-center min-h-56 w-full lg:w-fit gap-14 sm:flex-row '>
+          <div className='flex justify-center items-center md:p-5 md:m-5'>
+            <h2 className='text-green-600 text-3xl md:text-5xl font-semibold'>
               76%
             </h2>
           </div>
           <div className='flex flex-col justify-center items-center gap-10'>
             {progressData.map((data, index) => (
-              <div key={index} className='flex gap-10 justify-start items-center'>
-                <p className='text-slate-500'>
+              <div key={index} className='flex justify-center space-x-5 items-center'>
+                <p className='text-slate-600'>
                   {data.action}
                 </p>
                 <div>
-                  <Progress value={data.value} color={data.color} className='w-[300px] bg-slate-300' />
+                  <Progress value={data.value} color={data.color} className='w-[100px] sm:w-[150px] md:w-[300px] lg:w-[400px] bg-slate-300' />
                 </div>
-                <p className='text-slate-500'>
+                <p className='text-slate-600'>
                   {data.percentage}
                 </p>
               </div>
