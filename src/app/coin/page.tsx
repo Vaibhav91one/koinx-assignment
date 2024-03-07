@@ -15,7 +15,7 @@ type Props = {}
 const page = (props: Props) => {
     return (
         <>
-            <div className="max-container padding-container flex flex-col  md:gap-28 lg:py-20 lg:flex-row">
+            <div className="max-container padding-container flex flex-col justify-center items-center lg:justify-start lg:items-start  md:gap-28 lg:py-20 lg:flex-row">
                 <div className="w-2/3">
                     <Chart />
                     <Detail />
