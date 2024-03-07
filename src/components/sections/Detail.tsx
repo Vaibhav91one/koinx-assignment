@@ -31,8 +31,8 @@ const Detail = (props: Props) => {
             ))}
 
           </TabsList>
-          {TABS.map((tab) => (
-            <TabsContent value={tab.trigger}>
+          {TABS.map((tab,index) => (
+            <TabsContent value={tab.trigger} key={index}>
               {tab.description}
             </TabsContent>
           ))}
