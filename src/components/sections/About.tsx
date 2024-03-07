@@ -18,7 +18,7 @@ type Props = {}
 const AboutCard = ({ title, bg, img }: AboutCardProps) => {
   return (
     <>
-      <Card className={`my-10 bg-gradient-to-r ${bg}`}>
+      <Card className={`my-4 sm:my-10 bg-gradient-to-r ${bg}`}>
         <CardContent className='flex justify-between py-8 items-center gap-5'>
           <div className='w-1/2'>
             <Image
@@ -85,7 +85,7 @@ const About = (props: Props) => {
             Already Holding Bitcoin ?
           </h1>
 
-          <div className='flex flex-col justify-start items-start gap-2 lg:flex-row'>
+          <div className='flex flex-col justify-start items-start gap-0 sm:gap-2 sm:flex-row'>
             {aboutCardData.map((data, index) => (
               <AboutCard key={index} bg={data.bg} title={data.title} img={data.img} />
             ))}
