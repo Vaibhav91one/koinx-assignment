@@ -7,7 +7,7 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel"
 import { Info } from 'lucide-react'
-import { SENTIMENT_ITEMS } from '@/constants'
+import { SENTIMENT_ITEMS, progressData } from '@/constants'
 import { TrendingUp, Newspaper, BarChart } from 'lucide-react';
 import { Progress } from '../ui/progress'
 
@@ -83,39 +83,19 @@ const Sentiment = (props: Props) => {
             </h2>
           </div>
           <div className='flex flex-col justify-center items-center gap-10'>
-            <div className='flex gap-10 justify-start items-center'>
-              <p className='text-slate-500'>
-                Buy
-              </p>
-              <div>
-                <Progress value={80} color='#76FF7A' className='w-[300px] bg-slate-300' />
+            {progressData.map((data, index) => (
+              <div key={index} className='flex gap-10 justify-start items-center'>
+                <p className='text-slate-500'>
+                  {data.action}
+                </p>
+                <div>
+                  <Progress value={data.value} color={data.color} className='w-[300px] bg-slate-300' />
+                </div>
+                <p className='text-slate-500'>
+                  {data.percentage}
+                </p>
               </div>
-              <p className='text-slate-500' >
-                76%
-              </p>
-            </div>
-            <div className='flex gap-10 justify-start items-center'>
-              <p className='text-slate-500' >
-                Hold
-              </p>
-              <div>
-                <Progress value={8} color='gray' className='w-[300px] bg-slate-300' />
-              </div>
-              <p className='text-slate-500' >
-                8%
-              </p>
-            </div>
-            <div className='flex gap-10 justify-start items-center'>
-              <p className='text-slate-500' >
-                Sell
-              </p>
-              <div>
-                <Progress value={16} color='red' className='w-[300px] bg-slate-300' />
-              </div>
-              <p className='text-slate-500' >
-                76%
-              </p>
-            </div>
+            ))}
           </div>
         </div>
 

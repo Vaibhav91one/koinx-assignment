@@ -48,3 +48,33 @@ export const TABS = [
       'We provide a solution for you to be able to use our application when climbing, yes offline maps you can use at any time there is no signal at the location',
   },
 ];
+
+// Define a type for each progress data item
+type ProgressDataItem = {
+  action: string;
+  value: number;
+  color: string;
+  percentage: string;
+ };
+ 
+ // Define the constants
+ export const progressData: ProgressDataItem[] = [
+  {
+     action: 'Buy',
+     value: 80,
+     color: '#76FF7A',
+     percentage: '76%',
+  },
+  {
+     action: 'Hold',
+     value: 8,
+     color: '#C0C0C0',
+     percentage: '8%',
+  },
+  {
+     action: 'Sell',
+     value: 16,
+     color: 'red',
+     percentage: '16%',
+  },
+ ];
