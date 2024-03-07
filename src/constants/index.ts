@@ -99,3 +99,18 @@ type AboutCardDataItem = {
      img: '/about-img-2.jpg',
   },
  ];
+
+ export const teamCardsData = [
+  {
+     name: 'John Smith',
+     img: '/profile-1.jpg',
+  },
+  {
+     name: 'Elina Williams',
+     img: '/profile-2.jpg',
+  },
+  {
+     name: 'John Smith',
+     img: '/profile-3.jpg',
+  },
+ ];

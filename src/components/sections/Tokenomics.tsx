@@ -6,7 +6,7 @@ type Props = {}
 const Tokenomics = (props: Props) => {
   return (
     <>
-      <section className='max-container min-h-screen flex flex-col items-start justify-start md:gap-12 lg:py-14'>
+      <section className='max-container min-h-72 flex flex-col items-start justify-start md:gap-12 lg:py-14'>
         <div>
           <div>
           <h1 className='sectionTitle my-8'>
