@@ -18,19 +18,19 @@ type Props = {}
 const AboutCard = ({ title, bg, img }: AboutCardProps) => {
   return (
     <>
-      <Card className={`my-4 sm:my-10 bg-gradient-to-r ${bg}`}>
+      <Card className={`lg:w-[420px] my-4 sm:my-10 bg-gradient-to-br ${bg}`}>
         <CardContent className='flex justify-between py-8 items-center gap-5'>
           <div className='w-1/2'>
             <Image
               src={img}
               alt='about-img'
-              width={200}
-              height={200}
+              width={400}
+              height={400}
               className='rounded-lg'
             />
           </div>
           <div className='flex flex-col justify-between items-start gap-5'>
-            <h2 className='text-2xl font-semibold text-white'>
+            <h2 className='text-xl font-semibold text-white'>
               {title}
             </h2>
             <Button className='bg-white text-blue-950 hover:bg-white flex justify-center items-center gap-2'>
@@ -46,7 +46,7 @@ const AboutCard = ({ title, bg, img }: AboutCardProps) => {
 const About = (props: Props) => {
   return (
     <>
-      <div className='flex flex-col justify-start items-start gap-12'>
+      <section className='max-container min-h-80 flex flex-col items-start justify-start md:gap-12 lg:py-14 gap-12'>
         <div>
           <h1 className='sectionTitle mb-5'>
             About Bitcoin
@@ -98,7 +98,7 @@ const About = (props: Props) => {
           </div>
         </div>
 
-      </div>
+      </section>
     </>
   )
 }

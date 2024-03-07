@@ -89,12 +89,12 @@ type AboutCardDataItem = {
  // Define the constants
  export const aboutCardData: AboutCardDataItem[] = [
   {
-     bg: 'from-cyan-500 to-blue-500',
+     bg: 'from-green-500 to-blue-700',
      title: 'Calculate your Profits',
      img: '/about-img-1.jpg',
   },
   {
-     bg: 'from-red-400 to-red-500',
+     bg: 'from-red-300 to-red-500',
      title: 'Calculate your tax liability',
      img: '/about-img-2.jpg',
   },

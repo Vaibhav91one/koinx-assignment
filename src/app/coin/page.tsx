@@ -8,11 +8,17 @@ import SimilarCoins from '@/components/sections/SimilarCoins'
 import Team from '@/components/sections/Team'
 import Tokenomics from '@/components/sections/Tokenomics'
 import TrendingCoins from '@/components/sections/TrendingCoins'
+import { GetPrice, GetTrending } from '@/lib/actions/CoinGeckoActions'
 import React from 'react'
 
 type Props = {}
 
 const page = (props: Props) => {
+    
+    const data = GetPrice();
+    // const data = GetTrending();
+
+
     return (
         <>
             <div className="max-container padding-container flex flex-col justify-center items-center lg:justify-start lg:items-start  md:gap-28 lg:py-20 lg:flex-row">
@@ -26,7 +32,7 @@ const page = (props: Props) => {
                     <SimilarCoins />
                     <TrendingCoins />
                 </div>
-                <div>
+                <div className='flex flex-col'>
                     <GetStartedCard />
                     <TrendingCoinsNoChart />
                 </div>

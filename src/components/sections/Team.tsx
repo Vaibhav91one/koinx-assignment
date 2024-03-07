@@ -10,18 +10,18 @@ type TeamCardProps = {
 
 const TeamCard = ({ name, img }: TeamCardProps) => {
   return (
-    <div className='flex justify-start items-center gap-8'>
+    <div className='flex flex-col md:flex-row  justify-start items-center gap-8'>
       <div className='flex flex-col justify-center items-center gap-2'>
         <div>
           <Image
             src={img}
             alt='profile'
-            width={300}
-            height={300}
+            width={200}
+            height={200}
             className='rounded-lg transition-all hover:shadow-[0px_0px_30px_rgba(0,0,0,_0.7)]'
           />
         </div>
-        <div className='flex justify-center items-center flex-col'>
+        <div className='flex justify-center flex-col items-center'>
           <h2 className='font-semibold'>
             {name}
           </h2>
