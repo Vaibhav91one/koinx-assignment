@@ -31,13 +31,17 @@ export default async function Home() {
 
   return (
     <>
-      <section className="max-container h-[550px] flex gap-10 flex-col items-center justify-center bg-gradient-to-t from-white via-green-300 to-white">
+      <section className="max-container h-[550px] flex gap-14 flex-col items-center justify-center bg-gradient-to-t from-white via-green-300 to-white">
 
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-x-4 gap-y-5">
           {data.map((item: any, index: number) => (
             <CoinButtons item={item} key={index} />
           ))}
         </div>
+
+        <p >
+          Note: <span className="text-slate-500" >If you click on a button and see a blink this means that Rate Limiting was done on API. So, try clicking on the button after few seconds.</span>
+        </p>
 
       </section>
     </>
