@@ -7,27 +7,51 @@ import {
 } from "@/components/ui/tabs"
 import { BITCOIN_INFO, TABS } from "@/constants"
 import { Info } from "lucide-react"
+import { redirect } from "next/navigation";
 
-const BitcoinInfo = () => {
+type InfoProps = {
+  name: string;
+  Price: string;
+}
+
+const BitcoinInfo = ({name, Price} : InfoProps) => {
   return (
-     <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-20 gap-y-12">
-       {BITCOIN_INFO.map((info, index) => (
-         <div key={index} className="flex justify-between items-center">
-           <p className="text-slate-500 text-sm">
-             {info.title}
-           </p>
-           <p className="text-sm font-semibold">
-             {info.value}
-           </p>
-         </div>
-       ))}
-     </div>
+    <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-20 gap-y-12">
+      <div className="flex justify-between items-center">
+        <p className="text-slate-500 text-sm">
+          {name}
+        </p>
+        <p className="text-sm font-semibold">
+          ${Price}
+        </p>
+      </div>
+      {BITCOIN_INFO.map((info, index) => (
+        <div key={index} className="flex justify-between items-center">
+          <p className="text-slate-500 text-sm">
+            {info.title}
+          </p>
+          <p className="text-sm font-semibold">
+            {info.value}
+          </p>
+        </div>
+      ))}
+    </div>
   );
- };
+};
 
-type Props = {}
+type Props = {
+  CoinInfo: any
+}
 
-const Detail = (props: Props) => {
+const Detail = ({ CoinInfo }: Props) => {
+
+  if(!CoinInfo) {
+    return redirect("/")
+  }
+
+  const name = CoinInfo.name;
+  const Price = CoinInfo.market_data.current_price.usd;
+
   return (
     <>
       <section className="max-container flex flex-col items-start justify-start md:gap-12 lg:py-14">
@@ -97,29 +121,29 @@ const Detail = (props: Props) => {
                     Fundamentals <Info className='bg-gray-600 rounded-2xl text-white ' />
                   </h2>
                   <div className="py-4">
-                  <BitcoinInfo/>
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-20 gap-y-12">
-                    <div className="flex justify-between items-center mt-5">
-                      <p className="text-slate-500 text-sm">
-                        All-Time High
-                      </p>
-                      <p className="flex justify-between items-end flex-col text-sm font-semibold">
-                        $69,044.77 <span className="text-red-500"> -75.6% </span>
-                        <span> Nov 10,2021 (about 1 year) </span>
-                      </p>
-                    </div>
-                    <div className="flex justify-between items-center mt-5">
-                      <p className="text-slate-500 text-sm">
-                        All-Time Low
-                      </p>
-                      <p className="flex justify-between items-end flex-col text-sm font-semibold">
-                        $69,044.77 <span className="text-green-500"> -75.6% </span>
-                        <span> Nov 10,2021 (about 9 year) </span>
-                      </p>
+                    <BitcoinInfo name={name} Price={Price} />
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-x-20 gap-y-12">
+                      <div className="flex justify-between items-center mt-5">
+                        <p className="text-slate-500 text-sm">
+                          All-Time High
+                        </p>
+                        <p className="flex justify-between items-end flex-col text-sm font-semibold">
+                          $69,044.77 <span className="text-red-500"> -75.6% </span>
+                          <span> Nov 10,2021 (about 1 year) </span>
+                        </p>
+                      </div>
+                      <div className="flex justify-between items-center mt-5">
+                        <p className="text-slate-500 text-sm">
+                          All-Time Low
+                        </p>
+                        <p className="flex justify-between items-end flex-col text-sm font-semibold">
+                          $69,044.77 <span className="text-green-500"> -75.6% </span>
+                          <span> Nov 10,2021 (about 9 year) </span>
+                        </p>
+                      </div>
                     </div>
                   </div>
-                  </div>
-                 
+
                 </div>
               </div>
             </TabsContent>

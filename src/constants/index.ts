@@ -117,10 +117,6 @@ type AboutCardDataItem = {
 
  export const BITCOIN_INFO = [
   {
-     title: "Bitcoin Price",
-     value: "$16,815.46",
-  },
-  {
      title: "24h Low / 24h High",
      value: "$16,815.46 / $16,815.46",
   },

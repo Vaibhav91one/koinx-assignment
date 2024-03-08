@@ -7,13 +7,16 @@ import {
 import { ArrowRight } from 'lucide-react'
 import Image from 'next/image'
 import { aboutCardData } from '@/constants'
+import { redirect } from 'next/navigation'
 
 type AboutCardProps = {
   title: string;
   bg: string;
   img: string;
 }
-type Props = {}
+type Props = {
+  CoinInfo: any
+}
 
 const AboutCard = ({ title, bg, img }: AboutCardProps) => {
   return (
@@ -43,17 +46,23 @@ const AboutCard = ({ title, bg, img }: AboutCardProps) => {
   )
 }
 
-const About = (props: Props) => {
+const About = ({CoinInfo}: Props) => {
+
+  if(!CoinInfo) {
+    return redirect("/")
+  }
+  const name = CoinInfo.name;
+
   return (
     <>
       <section className='max-container min-h-80 flex flex-col items-start justify-start md:gap-12 lg:py-14 gap-12'>
         <div>
           <h1 className='sectionTitle mb-5'>
-            About Bitcoin
+            About {name}
           </h1>
           <div>
             <h2 className="font-bold mb-2">
-              What is Bitcoin?
+              What is {name}?
             </h2>
             <p className="font-medium">
               Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vero, iure fugit? Possimus atque totam iste ab qui harum non corporis provident quo itaque asperiores, laudantium numquam reprehenderit quasi explicabo quae.
@@ -82,7 +91,7 @@ const About = (props: Props) => {
         </div>
         <div>
           <h1 className='sectionTitle mb-5'>
-            Already Holding Bitcoin ?
+            Already Holding {name}?
           </h1>
 
           <div className='flex flex-col justify-start items-start gap-0 sm:gap-2 sm:flex-row'>

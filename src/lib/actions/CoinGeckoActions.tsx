@@ -1,11 +1,11 @@
 import axios from "axios";
 
-export async function GetPrice() {
+export async function GetPrice(id: string) {
     const options = {
         method: 'GET',
         url: 'https://api.coingecko.com/api/v3/simple/price',
         params: {
-            ids: 'bitcoin',
+            ids: `${id}`,
             vs_currencies: 'inr,usd',
             include_24hr_change: 'true'
         },
@@ -38,4 +38,18 @@ export async function GetTrending() {
         console.error(error);
     }
 
+}
+
+export async function GetCoinInfo(id: string) {
+    const options = {
+        method: 'GET',
+        url: `https://api.coingecko.com/api/v3/coins/${id}`,
+    };
+
+    try {
+        const response = await axios.request(options);
+        return response.data
+    } catch (error) {
+        console.error(error);
+    }
 }
