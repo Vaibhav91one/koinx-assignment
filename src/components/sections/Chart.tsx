@@ -15,7 +15,7 @@ const Chart = async ({ id, CoinInfo }: Props) => {
 
   const Price = await GetPrice(id);
 
-  if (!CoinInfo) {
+  if (!CoinInfo || !Price) {
     return redirect("/")
   }
 
