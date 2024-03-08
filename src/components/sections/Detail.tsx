@@ -42,8 +42,8 @@ const Detail = (props: Props) => {
             <TabsContent value={tab.trigger} key={index}>
               <div className="pt-5" >
                 <div>
-                  <h1 className="sectionTitle my-6">
-                    Performance
+                  <h1 className="sectionTitle">
+                    {tab.trigger}
                   </h1>
 
                   <div className="flex flex-col gap-10 my-6">

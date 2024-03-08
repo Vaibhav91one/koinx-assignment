@@ -10,8 +10,8 @@ const Chart = async () => {
   return (
     <>
       <section className='max-container flex flex-col items-start justify-start gap-5 md:gap-12'>
-        <div className='flex justify-start items-center gap-2'>
-          Cryptocurrencies <ChevronsRight /> <span>Bitcoin</span>
+        <div className='flex justify-start items-center gap-2 text-md'>
+          Cryptocurrencies <ChevronsRight /> <span className='text-slate-600'>Bitcoin</span>
         </div>
 
         <div className='flex justify-start items-center gap-2'>
