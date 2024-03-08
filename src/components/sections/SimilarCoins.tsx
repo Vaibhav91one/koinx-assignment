@@ -37,7 +37,7 @@ const CarouselItemComponent = ({ item }: any) => {
 const SimilarCoins = ( {SimilarCoinsData}: any) => {
 
   return (
-    <section className='max-container gap-2 w-[300px] sm:w-[500px] md:w-[900px] lg:w-full flex flex-col items-start justify-start md:gap-8'>
+    <section className='max-container py-10 gap-2 w-[300px] sm:w-[500px] md:w-[900px] lg:w-full flex flex-col items-start justify-start md:gap-8'>
       <div className='flex flex-col gap-5 items-center justify-start'>
         <h1 className='sectionTitle'>
           You May Also Like
