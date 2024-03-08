@@ -31,7 +31,7 @@ const TeamCard = ({ name, img }: TeamCardProps) => {
         </div>
       </div>
       <div>
-        <p className='font-medium mb-8'>
+        <p className='font-medium mb-8 text-center lg:text-start '>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem odit id fugit atque natus ipsa nulla possimus facere saepe? Id suscipit commodi soluta distinctio officia quos rem pariatur quisquam autem.
         </p>
       </div>
@@ -42,16 +42,16 @@ const TeamCard = ({ name, img }: TeamCardProps) => {
 const Team = (props: Props) => {
   return (
     <>
-      <section className='max-container min-h-screen flex flex-col items-start justify-start md:gap-12 lg:py-14'>
+      <section className='max-container flex flex-col items-start justify-start md:gap-12 lg:py-14'>
         <div>
-          <h1 className='sectionTitle my-8'>
+          <h1 className='sectionTitle my-4'>
             Team
           </h1>
           <p className='font-medium'>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae mollitia officiis assumenda eveniet. Ratione sapiente voluptatibus et doloribus, quisquam ea quibusdam quas ipsum, totam aut obcaecati impedit error, unde nisi.
           </p>
         </div>
-        <div className='flex flex-col justify-start items-start my-5 gap-10'>
+        <div className='flex flex-col justify-start items-start my-2 gap-10'>
           {teamCardsData.map((data, index) => (
             <TeamCard key={index} name={data.name} img={data.img} />
           ))}
