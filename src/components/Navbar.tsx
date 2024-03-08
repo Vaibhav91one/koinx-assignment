@@ -6,7 +6,7 @@ import { Menu } from "lucide-react"
 
 const Navbar = () => {
     return (
-        <nav className="flexBetween max-container padding-container relative z-30 py-8">
+        <nav className="flexBetween max-container padding-container relative z-30 py-10 lg:py-5">
             <Link href="/">
                 <Image src="/koinx_logo.png" alt="logo" width={74} height={29} />
             </Link>

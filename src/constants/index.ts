@@ -114,3 +114,38 @@ type AboutCardDataItem = {
      img: '/profile-3.jpg',
   },
  ];
+
+ export const BITCOIN_INFO = [
+  {
+     title: "Bitcoin Price",
+     value: "$16,815.46",
+  },
+  {
+     title: "24h Low / 24h High",
+     value: "$16,815.46 / $16,815.46",
+  },
+  {
+     title: "7d Low / 7d High",
+     value: "$16,815.46 / $16,815.46",
+  },
+  {
+     title: "Trading Volume",
+     value: "$23,249,202,782",
+  },
+  {
+     title: "Market Cap Rank",
+     value: "#1",
+  },
+  {
+     title: "Market Cap",
+     value: "$323,507,290,047",
+  },
+  {
+     title: "Market Cap Dominance",
+     value: "38.343%",
+  },
+  {
+     title: "Volume / Market Cap",
+     value: "0.0718",
+  },
+ ];
