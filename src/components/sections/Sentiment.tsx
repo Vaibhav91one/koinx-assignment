@@ -46,7 +46,7 @@ const SentimentCard = ({ icon, bg }: CardProps) => {
 const Sentiment = (props: Props) => {
   return (
     <>
-      <section className='max-container min-h-screen flex flex-col items-start justify-start md:gap-12 lg:py-14'>
+      <section className='max-container min-h-screen flex flex-col items-start justify-start md:gap-12 lg:py-7'>
         <div className='flex flex-col gap-5 items-center justify-start'>
           <h1 className='sectionTitle'>
             Sentiment
