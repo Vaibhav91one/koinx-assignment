@@ -17,7 +17,7 @@ export async function GetPrice() {
 
     try {
         const response = await axios.request(options);
-        console.log(response.data);
+        return response.data
     } catch (error) {
         console.error(error);
     }
@@ -37,7 +37,7 @@ export async function GetTrending() {
 
     try {
         const response = await axios.request(options);
-        console.log(response.data.coins[0].item.data);
+        return response.data.coins
     } catch (error) {
         console.error(error);
     }

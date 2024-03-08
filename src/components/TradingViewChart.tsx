@@ -7,47 +7,57 @@ function TradingViewWidget() {
 
     useEffect(() => {
         // Check if the script has already been added to prevent duplication
-        if (!container.current.querySelector('script[src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js"]')) {
+        if (!container.current.querySelector('script[src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js"]')) {
             const script = document.createElement("script");
-            script.src = "https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js";
+            script.src = "https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js";
             script.type = "text/javascript";
             script.async = true;
             script.innerHTML = `
-        {
-          "autosize": true,
-          "symbol": "BITSTAMP:BTCUSD",
-          "interval": "D",
-          "timezone": "Etc/UTC",
-          "theme": "light",
-          "style": "0",
-          "locale": "en",
-          "enable_publishing": false,
-          "hide_top_toolbar": false,
-          "hide_legend": true,
-          "save_image": false,
-          "calendar": false,
-          "hide_volume": true,
-          "support_host": "https://www.tradingview.com"
-        }`;
+            {
+              "symbols": [
+                [
+                 "BITSTAMP:BTCUSD|1M"
+                ]
+              ],
+              "chartOnly": false,
+              "width": "100%",
+              "height": "100%",
+              "locale": "en",
+              "colorTheme": "light",
+              "autosize": true,
+              "showVolume": false,
+              "showMA": false,
+              "hideDateRanges": false,
+              "hideMarketStatus": false,
+              "hideSymbolLogo": false,
+              "scalePosition": "right",
+              "scaleMode": "Normal",
+              "fontFamily": "-apple-system, BlinkMacSystemFont, Trebuchet MS, Roboto, Ubuntu, sans-serif",
+              "fontSize": "10",
+              "noTimeScale": false,
+              "valuesTracking": "1",
+              "changeMode": "price-and-percent",
+              "chartType": "area",
+              "maLineColor": "#2962FF",
+              "maLineWidth": 1,
+              "maLength": 9,
+              "lineWidth": 2,
+              "lineType": 0,
+              "dateRanges": [
+                "1d|1",
+                "1m|30",
+                "3m|60",
+                "12m|1D",
+                "60m|1W",
+                "all|1M"
+              ]
+            }`;
             container.current.appendChild(script);
-            // Prevent redirection
-            const preventRedirection = (event: any) => {
-                event.preventDefault();
-            };
-
-            // Add event listener to prevent redirection
-            container.current.addEventListener('click', preventRedirection);
-
-            // Cleanup on unmount
-            return () => {
-                container.current.removeEventListener('click', preventRedirection);
-            };
         }
     }, []);
 
     return (
-        <div className='flex justify-center items-center max-container py-8 w-[350px] sm:[700px] md:w-[800px] lg:w-[800px] h-[500px]' ref={container}>
-            {/* TradingView widget will be inserted here */}
+        <div className='flex justify-center items-center max-container py-2 w-[350px] md:w-[800px] lg:w-[800px] h-[500px]' ref={container}>
         </div>
     );
 }

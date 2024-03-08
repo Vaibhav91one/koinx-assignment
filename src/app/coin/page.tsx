@@ -7,17 +7,14 @@ import Sentiment from '@/components/sections/Sentiment'
 import SimilarCoins from '@/components/sections/SimilarCoins'
 import Team from '@/components/sections/Team'
 import Tokenomics from '@/components/sections/Tokenomics'
-import TrendingCoins from '@/components/sections/TrendingCoins'
 import { GetPrice, GetTrending } from '@/lib/actions/CoinGeckoActions'
 import React from 'react'
 
 type Props = {}
 
-const page = (props: Props) => {
+const page = async(props: Props) => {
     
-    const data = GetPrice();
-    // const data = GetTrending();
-
+    const similarCoinsData = await GetTrending();
 
     return (
         <>
@@ -29,12 +26,11 @@ const page = (props: Props) => {
                     <About />
                     <Tokenomics />
                     <Team />
-                    <SimilarCoins />
-                    <TrendingCoins />
+                    <SimilarCoins SimilarCoinsData={similarCoinsData} />
                 </div>
                 <div className='flex flex-col'>
                     <GetStartedCard />
-                    <TrendingCoinsNoChart />
+                    <TrendingCoinsNoChart SimilarCoinsData={similarCoinsData} />
                 </div>
             </div>
         </>
